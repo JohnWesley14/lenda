@@ -104,7 +104,7 @@ aside p {
    margin-right: 120px;
    margin-top: 120px;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
    .inicialMessage{
       font-size: 14px;
    }
