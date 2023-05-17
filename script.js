@@ -3,26 +3,42 @@
 
 
 
-
-
 // --------------
 
 
 const image = document.querySelector('.img')
 const point = document.querySelector('.point')
 const infoPoints = document.querySelector('.infoPoints')
+const timer = document.querySelector('.Timer')
 
 
 const divBaixo = document.querySelector('.baixo')
 const body = document.querySelector('body')
 const song = document.querySelector('.song')
+const all = document.querySelector('.all')
 
+time = 0
 document.addEventListener("mousemove", mover)
 
 point.addEventListener("click", pontuar)
 
 
-
+setInterval(() => {
+   
+   time++;
+   timer.innerHTML = `Tempo: ${time}`
+   if(ponto<5){
+      if(time >= 10){
+         timer.innerHTML = `Morreu`
+         image.style.display = 'none'
+         point.style.display = 'none'
+         timer.style.color = 'red'
+      }
+   }else{
+      timer.innerHTML = ``
+   }
+   
+}, 1000);
 
 
 // ---------------
@@ -58,6 +74,8 @@ function pontuar(){
    if(ponto >= 5){
       divBaixo.style.display = 'flex' 
       body.style.overflowY = 'visible'
+      image.style.display = 'none'
+      point.style.display = 'none'
       
    }
 }
