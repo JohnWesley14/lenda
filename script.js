@@ -5,7 +5,7 @@
 
 // --------------
 
-
+window.scroll(0,0)
 const image = document.querySelector('.img')
 const point = document.querySelector('.point')
 const infoPoints = document.querySelector('.infoPoints')
@@ -52,7 +52,7 @@ function mover(e){
    valorY = e.clientY
    
    image.style.left = `${valorX - 80}px`
-   image.style.top = `${valorY + 80}px`
+   image.style.top = `${valorY - 50}px`
    
 }
 
@@ -72,10 +72,12 @@ function pontuar(){
    point.style.left = `${getRandomInt(30, larguraTela) -30}px`
    point.style.top= `${getRandomInt(150, alturaTela - 80)}px`
    if(ponto >= 5){
+      all.style.height = '30vh'
       divBaixo.style.display = 'flex' 
       body.style.overflowY = 'visible'
       image.style.display = 'none'
       point.style.display = 'none'
+      window.scroll(0 , 250);
       
    }
 }
